@@ -37,6 +37,14 @@ void Game::handleEvents() {
     case SDL_QUIT:
       quit = true;
       break;
+    case SDL_MOUSEBUTTONDOWN:
+      int x, y;
+      SDL_GetMouseState(&x, &y);
+      x /= 60;
+      y /= 60;
+      auto board = Board::getInstance(renderer);
+      board->handleClick(x, y);
+      break;
     }
   }
 }
@@ -47,6 +55,6 @@ void Game::render() {
 }
 
 void Game::update() {
-  static Board board = Board(renderer);
-  board.render();
+  Board *board = Board::getInstance(renderer);
+  board->render();
 }

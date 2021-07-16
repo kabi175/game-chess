@@ -1,8 +1,8 @@
 #include "Game.h"
 
 char TITLE[] = "Chess";
-const int WIDTH = 70 * 8;
-const int HEIGHT = 70 * 8;
+const int WIDTH = 60 * 8;
+const int HEIGHT = 60 * 8;
 
 int main() {
   Game game = Game(TITLE, WIDTH, HEIGHT);
